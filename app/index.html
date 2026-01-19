@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>漏水音判定アプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Gemini API</p>
+        <h1>漏水音判定アプリ</h1>
+        <p class="subtitle">
+          音声ファイルをアップロードし、Geminiに漏水音かどうかを判定してもらいます。
+        </p>
+      </header>
+
+      <section class="panel">
+        <label class="field">
+          <span>Gemini APIキー</span>
+          <input
+            id="apiKey"
+            type="password"
+            placeholder="AIza..."
+            autocomplete="off"
+          />
+        </label>
+
+        <label class="field">
+          <span>音声ファイル</span>
+          <input id="audioFile" type="file" accept="audio/*" />
+          <small>例: wav, mp3, m4a</small>
+        </label>
+
+        <button id="analyzeButton" class="primary" type="button">
+          解析する
+        </button>
+
+        <div class="status" id="status">待機中: 音声ファイルを選択してください。</div>
+      </section>
+
+      <section class="result" aria-live="polite">
+        <h2>判定結果</h2>
+        <div id="resultCard" class="card">
+          <p class="placeholder">まだ結果はありません。</p>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h2>使い方</h2>
+        <ol>
+          <li>Gemini APIキーを入力します。</li>
+          <li>漏水音が含まれる可能性のある音声ファイルを選択します。</li>
+          <li>「解析する」を押して判定結果を確認します。</li>
+        </ol>
+        <p>
+          ※ 本アプリはGeminiの返答に基づいて判定します。最終判断は現場状況とあわせて行ってください。
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
